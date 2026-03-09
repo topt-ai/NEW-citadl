@@ -1,0 +1,22 @@
+# Ongoing Implementations
+
+- [x] Fix hero section headline clipping (add at least 80px padding-top to hero content container).
+- [x] Fix letter descenders/ascenders cropping in Hero headline (added padding).
+- [x] Fix marquee ticker strip (add overflow: hidden to hero section, set ticker strip to 48px fixed height at bottom edge).
+- [x] Update "Built for real businesses" section:
+  - [x] Update Image 2 to Apex Roofing.
+  - [x] Update Image 1 to ArcticEdge HVAC, rename from Climate Pro HVAC.
+  - [x] Update Image 3 to Sentinel Pest Co.
+  - [x] Add new container in position 1: "VOID", "Aesthetically clean performance agency", with 4th image.
+  - [x] Redesign Portfolio containers to be Full-Bleed 16:9 hover-reveal cards with 3D MouseMove GSAP tilt.
+  - [x] Change VOID image to VOID2.
+  - [x] Update section headline/subline to "The work." and "A few sites we have built for service businesses."
+  - [x] Ensure all images are in a public folder.
+  - [x] Remove "view site" redirects from containers.
+- [x] Update "Why Us" copy: "Top 3 on Google Maps ranking or we work with no cost until we get you there."
+- [x] Update "Process" copy: Discovery Call to 15 mins, Build to "Launch site in 2-4 weeks, or rank top of google maps in 90 days.", Grow to remove "if you want it".
+- [x] Enhance CTA section by converting to 15-minute call and inserting the integrated Cal.com embed widget.
+- [x] Update CTA Buttons sitewide to point to `https://cal.com/the-citadl/discovery-call` directly.
+- [x] Update Location footer copy to "We work with anyone, anywhere. New York. London. North Macedonia. Not North Korea."
+- [x] Perform a site-wide mobile & desktop visual inspection and clean up any copy inconsistencies (e.g. Services component mentioning refunds instead of the new guarantee).
+- [x] Update CTA sub-text from "Typically responds..." to "Shall we begin?"

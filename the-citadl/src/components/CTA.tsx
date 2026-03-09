@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Cal, { getCalApi } from "@calcom/embed-react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -25,6 +26,11 @@ export default function CTA() {
       );
     });
 
+    (async function () {
+      const cal = await getCalApi({ "namespace": "discovery-call" });
+      cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+    })();
+
     return () => ctx.revert();
   }, []);
 
@@ -35,18 +41,20 @@ export default function CTA() {
           Ready to get more customers?
         </h2>
         <p className="font-body text-[18px] md:text-[20px] text-citadl-muted leading-relaxed max-w-2xl mb-12">
-          Book a free 30-minute call. We will look at your current online presence and tell you exactly what is holding you back. No pitch. Just straight talk.
+          Book a free 15-minute call. We will look at your current online presence and tell you exactly what is holding you back. No pitch. Just straight talk.
         </p>
-        
-        <a
-          href="#"
-          className="bg-citadl-accent text-white font-medium text-[16px] md:text-[18px] px-10 py-5 rounded-[2px] hover:bg-citadl-dark transition-colors w-full sm:w-auto mb-6"
-        >
-          Book Your Free Call
-        </a>
-        
+
+        <div className="w-full max-w-[1000px] h-[600px] bg-white rounded-lg shadow-xl overflow-hidden mb-8 border border-gray-100">
+          <Cal
+            namespace="discovery-call"
+            calLink="the-citadl/discovery-call"
+            style={{ width: "100%", height: "100%", overflow: "scroll" }}
+            config={{ "layout": "month_view", "useSlotsViewOnSmallScreen": "true" }}
+          />
+        </div>
+
         <p className="font-mono text-[11px] text-citadl-muted uppercase tracking-wider">
-          Typically responds within 24 hours. No commitment required.
+          Shall we begin?
         </p>
       </div>
     </section>

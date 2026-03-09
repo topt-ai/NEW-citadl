@@ -36,8 +36,9 @@ export default function Footer() {
             <p className="font-mono text-[13px] uppercase tracking-wider text-white/50 mb-2">
               Locations
             </p>
-            <p className="font-body text-[15px] text-white/70 md:text-right">
-              New York &middot; London &middot; North Macedonia
+            <p className="font-body text-[15px] text-white/70 md:text-right space-y-1">
+              <span className="block">We work with anyone, anywhere.</span>
+              <span className="block">New York. London. North Macedonia. Not North Korea.</span>
             </p>
           </div>
         </div>

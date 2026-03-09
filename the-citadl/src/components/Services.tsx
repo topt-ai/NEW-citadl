@@ -76,11 +76,11 @@ export default function Services() {
                 Top 3 on Google Maps. <span className="italic">Guaranteed.</span>
               </h3>
               <p className="font-body text-[16px] md:text-[18px] text-citadl-muted leading-relaxed mb-12">
-                Ranking on Google Maps is still the highest-ROI move for local businesses. We get you there in 90 days or we refund you. No asterisks.
+                Ranking on Google Maps is still the highest-ROI move for local businesses. We work with no cost until we get you there. No asterisks.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Google Business Profile', 'Local Citations', '90-Day Guarantee'].map((tag) => (
+              {['Google Business Profile', 'Local Citations', 'Pay On Results'].map((tag) => (
                 <span
                   key={tag}
                   className="font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-citadl-dark/20 text-citadl-dark/80"

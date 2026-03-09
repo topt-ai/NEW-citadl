@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const benefits = [
   {
     title: '90 Days.',
-    description: 'Top 3 Google Maps ranking or full refund.',
+    description: 'Top 3 on Google Maps ranking or we work with no cost until we get you there.',
   },
   {
     title: 'Month to Month.',
@@ -72,9 +72,8 @@ export default function WhyUs() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className={`py-8 ${
-                  index !== 0 ? 'border-t border-white/10' : 'pt-0 lg:pt-8'
-                } ${index === benefits.length - 1 ? 'border-b border-white/10 pb-8' : ''}`}
+                className={`py-8 ${index !== 0 ? 'border-t border-white/10' : 'pt-0 lg:pt-8'
+                  } ${index === benefits.length - 1 ? 'border-b border-white/10 pb-8' : ''}`}
               >
                 <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
                   <h3 className="font-display text-[32px] md:text-[40px] leading-tight w-full md:w-1/2">

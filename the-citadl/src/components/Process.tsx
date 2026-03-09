@@ -8,7 +8,7 @@ const steps = [
   {
     number: '01',
     title: 'Discovery Call',
-    description: '30 mins. We learn your business, goals, and current situation.',
+    description: '15 mins. We learn your business, goals, and current situation.',
   },
   {
     number: '02',
@@ -18,12 +18,12 @@ const steps = [
   {
     number: '03',
     title: 'Build',
-    description: 'You get weekly updates. Launch in 2–4 weeks.',
+    description: 'Launch site in 2-4 weeks, or rank top of google maps in 90 days.',
   },
   {
     number: '04',
     title: 'Grow',
-    description: 'Ongoing SEO, reporting, and optimization if you want it.',
+    description: 'Ongoing SEO, reporting, and optimization.',
   },
 ];
 

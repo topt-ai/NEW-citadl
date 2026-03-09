@@ -16,11 +16,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled
             ? 'bg-citadl-bg/80 backdrop-blur-md border-b border-citadl-border'
             : 'bg-transparent border-b border-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           <div className="flex items-center">
@@ -44,7 +43,9 @@ export default function Navbar() {
               Process
             </a>
             <a
-              href="#contact"
+              href="https://cal.com/the-citadl/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-citadl-accent text-white text-[14px] px-5 py-2.5 rounded-[2px] hover:bg-citadl-dark transition-colors"
             >
               Book a Call
@@ -63,9 +64,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-citadl-dark text-white transition-transform duration-500 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed inset-0 z-50 bg-citadl-dark text-white transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center h-14">
@@ -97,7 +97,9 @@ export default function Navbar() {
               Process
             </a>
             <a
-              href="#contact"
+              href="https://cal.com/the-citadl/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-citadl-lime text-citadl-dark font-medium text-lg px-6 py-4 rounded-[2px] mt-8 inline-block mx-auto"
               onClick={() => setMobileMenuOpen(false)}
             >

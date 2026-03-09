@@ -46,7 +46,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[100dvh] bg-citadl-bg flex flex-col justify-between overflow-hidden pt-20">
+    <section className="relative h-[100dvh] bg-citadl-bg flex flex-col justify-between overflow-hidden pt-[120px]">
       {/* Abstract Decorative Element (Top Right) */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 pointer-events-none opacity-20">
         <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,10 +64,10 @@ export default function Hero() {
               ref={headlineRef}
               className="font-display text-[52px] md:text-[80px] lg:text-[110px] leading-[0.95] tracking-tight text-citadl-dark mb-8"
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pt-6 pb-6 -mt-6 -mb-6">
                 {wrapWords('Your next customer is already searching.')}
               </div>
-              <div className="overflow-hidden mt-2">
+              <div className="overflow-hidden pt-6 pb-6 -mt-4 -mb-6">
                 {wrapWords('We make sure they find you. And ')}
                 <span className="word inline-block italic mr-[0.25em]">choose</span>
                 <span className="word inline-block italic">you.</span>
@@ -89,7 +89,9 @@ export default function Hero() {
                 See Our Work
               </a>
               <a
-                href="#contact"
+                href="https://cal.com/the-citadl/discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-citadl-dark font-medium hover:text-citadl-accent transition-colors inline-flex items-center group"
               >
                 Book a Call
