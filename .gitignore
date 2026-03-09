@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# MacOS
+.DS_Store
+
+# Build files
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
