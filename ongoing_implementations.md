@@ -20,3 +20,5 @@
 - [x] Update Location footer copy to "We work with anyone, anywhere. New York. London. North Macedonia. Not North Korea."
 - [x] Perform a site-wide mobile & desktop visual inspection and clean up any copy inconsistencies (e.g. Services component mentioning refunds instead of the new guarantee).
 - [x] Update CTA sub-text from "Typically responds..." to "Shall we begin?"
+- [x] Integrate provided favicon (`citadl con background blanco.png`) into `index.html` and set document title to "The Citadl".
+- [x] Add business email (`hello@thecitadl.com`) to the footer and CTA sections.

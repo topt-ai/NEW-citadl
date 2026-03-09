@@ -8,9 +8,12 @@ export default function Footer() {
             <span className="font-mono text-[16px] tracking-[0.15em] uppercase font-medium mb-6">
               The Citadl
             </span>
-            <p className="font-body text-[16px] text-white/70 leading-relaxed max-w-xs">
+            <p className="font-body text-[16px] text-white/70 leading-relaxed max-w-xs mb-6">
               We build the online foundation your business actually needs.
             </p>
+            <a href="mailto:hello@thecitadl.com" className="font-body text-[15px] text-white/70 hover:text-citadl-lime transition-colors">
+              hello@thecitadl.com
+            </a>
           </div>
 
           {/* Center */}

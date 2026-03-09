@@ -53,8 +53,11 @@ export default function CTA() {
           />
         </div>
 
-        <p className="font-mono text-[11px] text-citadl-muted uppercase tracking-wider">
+        <p className="font-mono text-[11px] text-citadl-muted uppercase tracking-wider mb-2">
           Shall we begin?
+        </p>
+        <p className="font-mono text-[11px] text-citadl-muted uppercase tracking-wider opacity-70">
+          Or email us at: <a href="mailto:hello@thecitadl.com" className="hover:text-citadl-accent transition-colors">hello@thecitadl.com</a>
         </p>
       </div>
     </section>
