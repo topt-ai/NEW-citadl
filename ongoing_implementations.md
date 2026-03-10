@@ -22,3 +22,6 @@
 - [x] Update CTA sub-text from "Typically responds..." to "Shall we begin?"
 - [x] Integrate provided favicon (`citadl con background blanco.png`) into `index.html` and set document title to "The Citadl".
 - [x] Add business email (`hello@thecitadl.com`) to the footer and CTA sections.
+- [x] Update Services tags to outcome-based labels (FAST LOAD TIMES · MOBILE FIRST · BUILT TO CONVERT and GOOGLE BUSINESS PROFILE · LOCAL AUTHORITY · BACKEND OPTIMIZATION).
+- [x] Update Services guarantee copy to "We get you to the top in 90 days guaranteed or we work at no charge until we do."
+- [x] Remove email from CTA section.

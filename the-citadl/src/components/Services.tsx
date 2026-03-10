@@ -55,7 +55,7 @@ export default function Services() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['React', 'Tailwind', 'GSAP', 'Vercel'].map((tag) => (
+              {['Fast Load Times', 'Mobile First', 'Built To Convert'].map((tag) => (
                 <span
                   key={tag}
                   className="font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/20 text-white/80"
@@ -76,11 +76,11 @@ export default function Services() {
                 Top 3 on Google Maps. <span className="italic">Guaranteed.</span>
               </h3>
               <p className="font-body text-[16px] md:text-[18px] text-citadl-muted leading-relaxed mb-12">
-                Ranking on Google Maps is still the highest-ROI move for local businesses. We work with no cost until we get you there. No asterisks.
+                Ranking on Google Maps is still the highest-ROI move for local businesses. We get you to the top in 90 days guaranteed or we work at no charge until we do.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Google Business Profile', 'Local Citations', 'Pay On Results'].map((tag) => (
+              {['Google Business Profile', 'Local Authority', 'Backend Optimization'].map((tag) => (
                 <span
                   key={tag}
                   className="font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-citadl-dark/20 text-citadl-dark/80"
