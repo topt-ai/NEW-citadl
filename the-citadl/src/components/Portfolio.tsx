@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,76 +38,42 @@ const projects = [
 ];
 
 interface ProjectCardProps {
-  project: any;
+  project: typeof projects[number];
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current || !innerRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    gsap.to(innerRef.current, {
-      rotationY: (x / (rect.width / 2)) * 8,
-      rotationX: -(y / (rect.height / 2)) * 8,
-      ease: 'power2.out',
-      duration: 0.4,
-      transformPerspective: 1000,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    if (!innerRef.current) return;
-    gsap.to(innerRef.current, {
-      rotationY: 0,
-      rotationX: 0,
-      ease: 'power2.out',
-      duration: 0.6,
-    });
-  };
-
   return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="group relative aspect-video w-full bg-citadl-alt border border-citadl-border overflow-hidden"
-      style={{ perspective: '1000px' }}
-    >
-      <div
-        ref={innerRef}
-        className="w-full h-full relative overflow-hidden"
-      >
-        <img
-          src={project.image}
-          alt={project.name}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[1.05]"
-        />
-
-        {/* Subtle overlay that darkens slightly on hover */}
-        <div className="absolute inset-0 bg-black/20 transition-opacity duration-500 ease-out group-hover:bg-black/40" />
-
-        {/* Arrow top right */}
-        <div className="absolute top-6 right-6 opacity-0 translate-y-2 -translate-x-2 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 z-10">
-          <ArrowRight className="text-citadl-lime w-6 h-6" />
+    <div className="group">
+      {/* Browser window frame */}
+      <div className="rounded-[2px] overflow-hidden bg-citadl-alt border border-citadl-border transition-colors duration-300 group-hover:border-citadl-text-muted/40">
+        {/* Chrome top bar */}
+        <div className="h-8 flex items-center gap-2 px-4 bg-citadl-dark border-b border-citadl-border">
+          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#8B4444' }} />
+          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#8B8344' }} />
+          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#4B7355' }} />
         </div>
 
-        {/* Text container sliding up from bottom with backdrop blur */}
-        <div className="absolute inset-x-0 bottom-0 p-8 translate-y-8 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-md">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-lime mb-2">
-            {project.industry}
-          </p>
-          <h3 className="font-display text-[28px] leading-tight text-citadl-text-primary mb-3">
-            {project.name}
-          </h3>
-          <p className="font-body text-[15px] text-citadl-text-muted leading-relaxed max-w-sm">
-            {project.description}
-          </p>
+        {/* Screenshot, strict 16:9 */}
+        <div className="aspect-video w-full overflow-hidden bg-citadl-dark">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover"
+          />
         </div>
+      </div>
+
+      {/* Caption below the window */}
+      <div className="pt-5">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-lime mb-2">
+          {project.industry}
+        </p>
+        <h3 className="font-display text-[28px] leading-tight text-citadl-text-primary mb-2">
+          {project.name}
+        </h3>
+        <p className="font-body text-[15px] text-citadl-text-muted leading-relaxed max-w-sm">
+          {project.description}
+        </p>
       </div>
     </div>
   );

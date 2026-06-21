@@ -42,8 +42,7 @@ export default function Footer() {
               Locations
             </p>
             <div className="font-body text-[15px] text-citadl-text-muted md:text-right space-y-1">
-              <span className="block">We work with anyone, anywhere.</span>
-              <span className="block">New York. London. North Macedonia. Not North Korea.</span>
+              <span className="block">Wherever your business is.</span>
             </div>
           </div>
         </div>

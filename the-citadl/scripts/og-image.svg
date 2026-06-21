@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0C0F0D"/>
+
+  <!-- faint decorative grid, top-right -->
+  <g stroke="#1F2520" stroke-width="1" opacity="0.6">
+    <path d="M800 0V630 M880 0V630 M960 0V630 M1040 0V630 M1120 0V630"/>
+    <path d="M800 70H1200 M800 150H1200 M800 230H1200 M800 310H1200 M800 390H1200 M800 470H1200 M800 550H1200"/>
+    <circle cx="1040" cy="315" r="220" fill="none" stroke="#1F2520" stroke-dasharray="6 6"/>
+  </g>
+
+  <!-- icon mark -->
+  <g transform="translate(80,72)">
+    <rect width="64" height="64" rx="12.8" fill="#131714" stroke="#1F2520" stroke-width="1"/>
+    <path d="M44 18.6 A18 18 0 1 0 44 45.4" fill="none" stroke="#C8F04B" stroke-width="8.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="164" y="114" fill="#F2F4F0" font-family="'DejaVu Sans Mono','JetBrains Mono',monospace" font-size="26" letter-spacing="6" font-weight="700">THE CITADL</text>
+
+  <!-- headline -->
+  <text fill="#F2F4F0" font-family="'DejaVu Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="76" letter-spacing="-2">
+    <tspan x="80" y="330">Your next customer is</tspan>
+    <tspan x="80" y="416">already searching.</tspan>
+  </text>
+  <text x="80" y="502" fill="#C8F04B" font-family="'DejaVu Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="76" letter-spacing="-2">We make sure they choose you.</text>
+
+  <!-- footer tag -->
+  <text x="80" y="582" fill="#6E766F" font-family="'DejaVu Sans Mono','JetBrains Mono',monospace" font-size="22" letter-spacing="2">WEB DESIGN · LOCAL SEO · GOOGLE MAPS</text>
+</svg>

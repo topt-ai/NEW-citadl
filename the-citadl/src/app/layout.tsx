@@ -20,24 +20,36 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '700'],
 });
 
+const siteTitle = 'The Citadl: Web Design & Local SEO for Service Businesses';
+const siteDescription = 'We build high-performance, conversion-focused websites and drive local SEO for HVAC, roofing, plumbing, and other US service businesses. No long contracts.';
+
 export const metadata = {
-  title: 'The Citadl — Web Design & Local SEO for Service Businesses',
-  description: 'We build high-performance, conversion-focused websites and drive local SEO for HVAC, roofing, plumbing, and other US service businesses. No long contracts.',
+  title: siteTitle,
+  description: siteDescription,
   metadataBase: new URL('https://thecitadl.com'),
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
   openGraph: {
-    title: 'The Citadl — Web Design & Local SEO for Service Businesses',
-    description: 'We build high-performance, conversion-focused websites and drive local SEO for HVAC, roofing, plumbing, and other US service businesses. No long contracts.',
+    title: siteTitle,
+    description: siteDescription,
     url: 'https://thecitadl.com',
     siteName: 'The Citadl',
     images: [
       {
-        url: '/favicon.png',
-        width: 512,
-        height: 512,
-        alt: 'The Citadl Logo',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Citadl, web design and local SEO for service businesses.',
       },
     ],
     locale: 'en_US',
@@ -45,9 +57,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Citadl — Web Design & Local SEO for Service Businesses',
-    description: 'We build high-performance, conversion-focused websites and drive local SEO for HVAC, roofing, plumbing, and other US service businesses. No long contracts.',
-    images: ['/favicon.png'],
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/og-image.png'],
   },
 };
 
@@ -62,7 +74,6 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <head>
-        <link rel="icon" type="image/png" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -71,8 +82,8 @@ export default function RootLayout({
               '@type': 'LocalBusiness',
               'name': 'The Citadl',
               'url': 'https://thecitadl.com',
-              'logo': 'https://thecitadl.com/favicon.png',
-              'image': 'https://thecitadl.com/favicon.png',
+              'logo': 'https://thecitadl.com/favicon-32x32.png',
+              'image': 'https://thecitadl.com/og-image.png',
               'description': 'Web design and local SEO agency targeting US service businesses.',
               'email': 'hello@thecitadl.com',
               'priceRange': '$$',

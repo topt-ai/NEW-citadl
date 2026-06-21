@@ -80,10 +80,10 @@ export default function Hero() {
               className="font-display text-[52px] md:text-[80px] lg:text-[105px] leading-[0.95] tracking-tight text-citadl-text-primary mb-8"
             >
               <div className="overflow-hidden pt-6 pb-6 -mt-6 -mb-6">
-                {wrapWords('Your next customer is already searching.')}
+                {wrapWords('Your next customer is searching.')}
               </div>
               <div className="overflow-hidden pt-6 pb-6 -mt-4 -mb-6">
-                {wrapWords('We make sure they find you. And ')}
+                {wrapWords('We make sure they ')}
                 <span className="word inline-block text-citadl-accent mr-[0.25em] font-bold">choose</span>
                 <span className="word inline-block text-citadl-accent font-bold">you.</span>
               </div>
