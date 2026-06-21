@@ -1,26 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-citadl-bg: #F7F5F0;
-  --color-citadl-alt: #FFFFFF;
-  --color-citadl-dark: #0C0C0C;
-  --color-citadl-accent: #1A3C2E;
+  --color-citadl-bg: #0C0F0D;
+  --color-citadl-alt: #131714;
+  --color-citadl-dark: #0C0F0D;
+  --color-citadl-card: #131714;
+  --color-citadl-accent: #C8F04B;
   --color-citadl-lime: #C8F04B;
-  --color-citadl-muted: #6B6B6B;
-  --color-citadl-border: #E2E0DB;
+  --color-citadl-accent-hover: #A8CC3D;
+  --color-citadl-muted: #6E766F;
+  --color-citadl-border: #1F2520;
+  
+  --color-citadl-text-primary: #F2F4F0;
+  --color-citadl-text-muted: #6E766F;
 
-  --font-display: "Instrument Serif", serif;
-  --font-body: "DM Sans", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-display: var(--font-display), sans-serif;
+  --font-body: var(--font-body), sans-serif;
+  --font-mono: var(--font-mono), monospace;
 }
 
 body {
   background-color: var(--color-citadl-bg);
-  color: var(--color-citadl-dark);
+  color: var(--color-citadl-text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Grain Overlay */
@@ -32,7 +37,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.04;
+  opacity: 0.03;
 }
 
 /* Marquee Animation */
@@ -48,4 +53,5 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  background-color: #0C0F0D;
 }

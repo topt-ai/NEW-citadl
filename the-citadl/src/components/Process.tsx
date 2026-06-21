@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,7 +20,7 @@ const steps = [
   {
     number: '03',
     title: 'Build',
-    description: 'Launch site in 2-4 weeks, or rank top of google maps in 90 days.',
+    description: 'Launch site in 2-4 weeks. Maps ranking work starts immediately and compounds over time.',
   },
   {
     number: '04',
@@ -55,18 +57,18 @@ export default function Process() {
     <section id="process" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-16">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-muted mb-6">
-            // PROCESS
+          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
+            PROCESS
           </p>
-          <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-dark max-w-2xl">
+          <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-text-primary max-w-2xl">
             No mystery. No fluff. Here is how it works.
           </h2>
         </div>
 
         <div className="relative mt-24">
           {/* Connecting Line (Desktop: Horizontal, Mobile: Vertical) */}
-          <div className="absolute top-0 left-[24px] md:left-0 md:top-[24px] w-[2px] h-full md:w-full md:h-[2px] bg-citadl-border/50 z-0">
-            <div className="absolute top-0 left-0 w-full h-full bg-citadl-lime z-10"></div>
+          <div className="absolute top-0 left-[24px] md:left-0 md:top-[24px] w-[2px] h-full md:w-full md:h-[2px] bg-citadl-border z-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-citadl-accent z-10"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative z-20">
@@ -74,23 +76,36 @@ export default function Process() {
               <div key={index} className="flex flex-row md:flex-col items-start gap-6 md:gap-8">
                 {/* Number Circle */}
                 <div className="w-[50px] h-[50px] rounded-full bg-citadl-alt border border-citadl-border flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <span className="font-mono text-[14px] text-citadl-dark font-medium">
+                  <span className="font-mono text-[14px] text-citadl-text-primary font-medium">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="pt-2 md:pt-0">
-                  <h3 className="font-display text-[28px] md:text-[32px] leading-tight text-citadl-dark mb-4">
+                  <h3 className="font-display text-[28px] md:text-[32px] leading-tight text-citadl-text-primary mb-4">
                     {step.title}
                   </h3>
-                  <p className="font-body text-[16px] text-citadl-muted leading-relaxed">
+                  <p className="font-body text-[16px] text-citadl-text-muted leading-relaxed">
                     {step.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Small Inline FAQ Block */}
+        <div className="mt-24 max-w-3xl border-l-2 border-citadl-accent pl-6 py-2">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-accent mb-2">
+            Timeline Expectations
+          </p>
+          <h4 className="font-display text-[22px] text-citadl-text-primary mb-2">
+            "How long until I rank?"
+          </h4>
+          <p className="font-body text-[16px] text-citadl-text-muted leading-relaxed">
+            Most clients see movement in the first few weeks. Real local dominance is a months-long process, not overnight, and we stay on it until you're where you need to be.
+          </p>
         </div>
       </div>
     </section>

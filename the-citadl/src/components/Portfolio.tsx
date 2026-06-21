@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,7 +40,6 @@ const projects = [
 
 interface ProjectCardProps {
   project: any;
-  key?: React.Key;
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
@@ -75,7 +76,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative aspect-video w-full"
+      className="group relative aspect-video w-full bg-citadl-alt border border-citadl-border overflow-hidden"
       style={{ perspective: '1000px' }}
     >
       <div
@@ -93,18 +94,18 @@ function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Arrow top right */}
         <div className="absolute top-6 right-6 opacity-0 translate-y-2 -translate-x-2 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 z-10">
-          <ArrowRight className="text-white w-6 h-6" />
+          <ArrowRight className="text-citadl-lime w-6 h-6" />
         </div>
 
         {/* Text container sliding up from bottom with backdrop blur */}
-        <div className="absolute inset-x-0 bottom-0 p-8 translate-y-8 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-md">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-white/70 mb-2">
+        <div className="absolute inset-x-0 bottom-0 p-8 translate-y-8 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-md">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-lime mb-2">
             {project.industry}
           </p>
-          <h3 className="font-display text-[28px] leading-tight text-white mb-3">
+          <h3 className="font-display text-[28px] leading-tight text-citadl-text-primary mb-3">
             {project.name}
           </h3>
-          <p className="font-body text-[15px] text-white/80 leading-relaxed max-w-sm">
+          <p className="font-body text-[15px] text-citadl-text-muted leading-relaxed max-w-sm">
             {project.description}
           </p>
         </div>
@@ -141,14 +142,14 @@ export default function Portfolio() {
     <section id="work" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-16">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-muted mb-6">
-            // SELECTED WORK
+          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
+            SELECTED WORK
           </p>
           <div className="max-w-3xl">
-            <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-dark mb-6">
+            <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-text-primary mb-6">
               The work.
             </h2>
-            <p className="font-body text-[18px] text-citadl-muted leading-relaxed">
+            <p className="font-body text-[18px] text-citadl-text-muted leading-relaxed">
               A few sites we have built for service businesses.
             </p>
           </div>

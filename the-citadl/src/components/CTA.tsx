@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from 'react';
 import Cal, { getCalApi } from "@calcom/embed-react";
 import gsap from 'gsap';
@@ -35,16 +37,16 @@ export default function CTA() {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-[120px] lg:py-[200px] bg-citadl-bg flex items-center justify-center text-center">
+    <section id="contact" ref={sectionRef} className="py-[120px] lg:py-[200px] bg-citadl-bg flex items-center justify-center text-center border-b border-citadl-border">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-        <h2 className="font-display text-[64px] md:text-[96px] leading-[0.9] text-citadl-dark mb-8">
+        <h2 className="font-display text-[64px] md:text-[96px] leading-[0.9] text-citadl-text-primary mb-8">
           Ready to get more customers?
         </h2>
-        <p className="font-body text-[18px] md:text-[20px] text-citadl-muted leading-relaxed max-w-2xl mb-12">
+        <p className="font-body text-[18px] md:text-[20px] text-citadl-text-muted leading-relaxed max-w-2xl mb-12">
           Book a free 15-minute call. We will look at your current online presence and tell you exactly what is holding you back. No pitch. Just straight talk.
         </p>
 
-        <div className="w-full max-w-[1000px] h-[600px] bg-white rounded-lg shadow-xl overflow-hidden mb-8 border border-gray-100">
+        <div className="w-full max-w-[1000px] h-[600px] bg-white rounded-lg shadow-xl overflow-hidden mb-8 border border-citadl-border">
           <Cal
             namespace="discovery-call"
             calLink="the-citadl/discovery-call"
@@ -53,7 +55,7 @@ export default function CTA() {
           />
         </div>
 
-        <p className="font-mono text-[11px] text-citadl-muted uppercase tracking-wider">
+        <p className="font-mono text-[11px] text-citadl-accent uppercase tracking-wider">
           Shall we begin?
         </p>
       </div>
