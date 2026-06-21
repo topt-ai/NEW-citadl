@@ -66,7 +66,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-citadl-alt text-citadl-text-primary transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        aria-hidden={!mobileMenuOpen}
+        className={`fixed inset-0 z-50 bg-citadl-alt text-citadl-text-primary transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
           }`}
       >
         <div className="flex flex-col h-full p-6">
