@@ -31,16 +31,17 @@ export default function WhyUs() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current,
-        { y: 30, opacity: 0 },
+        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
+        { y: 24, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.7,
+          ease: 'power2.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -52,7 +53,7 @@ export default function WhyUs() {
   return (
     <section id="why-us" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-16" data-reveal>
           <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
             WHY US
           </p>
@@ -60,7 +61,7 @@ export default function WhyUs() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left Side */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between" data-reveal>
             <h2 className="font-display text-[56px] md:text-[72px] leading-[1.1] text-citadl-text-primary mb-8">
               "We win only<br />if you win."
             </h2>
@@ -74,6 +75,7 @@ export default function WhyUs() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
+                data-reveal
                 className={`py-8 ${index !== 0 ? 'border-t border-citadl-border' : 'pt-0 lg:pt-8'
                   } ${index === benefits.length - 1 ? 'border-b border-citadl-border pb-8' : ''}`}
               >

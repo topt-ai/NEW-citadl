@@ -13,12 +13,19 @@ const Globe = dynamic(() => import('./Globe'), {
 });
 
 export default function Hero() {
+  const labelRef = useRef<HTMLParagraphElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.fromTo(
+        labelRef.current,
+        { y: 16, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }
+      );
+
       const words = headlineRef.current?.querySelectorAll('.word');
       if (words) {
         gsap.fromTo(
@@ -75,17 +82,19 @@ export default function Hero() {
       <div className="flex-1 flex items-center pb-24 md:pb-32 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <div className="max-w-4xl">
+            <p
+              ref={labelRef}
+              className="font-mono text-[11px] uppercase tracking-[0.15em] text-citadl-accent mb-6"
+            >
+              Web Design&nbsp;&nbsp;·&nbsp;&nbsp;Local SEO&nbsp;&nbsp;·&nbsp;&nbsp;Google &amp; Meta Ads
+            </p>
             <h1
               ref={headlineRef}
-              className="font-display text-[52px] md:text-[80px] lg:text-[105px] leading-[0.95] tracking-tight text-citadl-text-primary mb-8"
+              className="font-display text-[64px] md:text-[100px] lg:text-[130px] leading-[0.95] tracking-tight text-citadl-text-primary mb-8"
             >
               <div className="overflow-hidden pt-6 pb-6 -mt-6 -mb-6">
-                {wrapWords('Your next customer is searching.')}
-              </div>
-              <div className="overflow-hidden pt-6 pb-6 -mt-4 -mb-6">
-                {wrapWords('We make sure they ')}
-                <span className="word inline-block text-citadl-accent mr-[0.25em] font-bold">choose</span>
-                <span className="word inline-block text-citadl-accent font-bold">you.</span>
+                {wrapWords('Found. Or ')}
+                <span className="word inline-block text-citadl-accent font-bold">forgotten.</span>
               </div>
             </h1>
 

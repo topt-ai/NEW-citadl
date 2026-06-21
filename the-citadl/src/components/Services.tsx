@@ -12,16 +12,17 @@ export default function Services() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current,
-        { y: 30, opacity: 0 },
+        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
+        { y: 24, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.7,
+          ease: 'power2.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -33,7 +34,7 @@ export default function Services() {
   return (
     <section id="services" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-16" data-reveal>
           <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
             SERVICES
           </p>
@@ -44,7 +45,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]">
+          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]" data-reveal>
             <div>
               <span className="font-mono text-[24px] text-citadl-text-muted opacity-50 block mb-12">
                 01
@@ -69,7 +70,7 @@ export default function Services() {
           </div>
 
           {/* Card 2 */}
-          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border-l-4 border-citadl-accent border-y border-r border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]">
+          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border-l-4 border-citadl-accent border-y border-r border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]" data-reveal>
             <div>
               <span className="font-mono text-[24px] text-citadl-text-muted opacity-50 block mb-12">
                 02
@@ -94,7 +95,7 @@ export default function Services() {
           </div>
 
           {/* Card 3 */}
-          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]">
+          <div className="group bg-citadl-alt text-citadl-text-primary p-10 md:p-14 rounded-[2px] border border-citadl-border transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between min-h-[400px]" data-reveal>
             <div>
               <span className="font-mono text-[24px] text-citadl-text-muted opacity-50 block mb-12">
                 03

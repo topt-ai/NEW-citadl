@@ -43,7 +43,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group">
+    <div className="group" data-reveal>
       {/* Browser window frame */}
       <div className="rounded-[2px] overflow-hidden bg-citadl-alt border border-citadl-border transition-colors duration-300 group-hover:border-citadl-text-muted/40">
         {/* Chrome top bar */}
@@ -85,16 +85,17 @@ export default function Portfolio() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current,
-        { y: 30, opacity: 0 },
+        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
+        { y: 24, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.7,
+          ease: 'power2.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -106,7 +107,7 @@ export default function Portfolio() {
   return (
     <section id="work" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-16" data-reveal>
           <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
             SELECTED WORK
           </p>

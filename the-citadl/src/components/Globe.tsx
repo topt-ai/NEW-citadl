@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 const CITIES = [
-  { name: 'Austin', lat: 30.2672, lon: -97.7431, label: 'Dentist · Austin · #1' },
-  { name: 'Miami', lat: 25.7617, lon: -80.1918, label: 'Roofer · Miami · #2' },
-  { name: 'Chicago', lat: 41.8781, lon: -87.6298, label: 'HVAC · Chicago · #1' },
-  { name: 'Los Angeles', lat: 34.0522, lon: -118.2437, label: 'Lawyer · LA · #3 → #1' },
-  { name: 'New York', lat: 40.7128, lon: -74.0060, label: 'Real Estate · NY · #1' },
-  { name: 'London', lat: 51.5074, lon: -0.1278, label: 'Clinic · London · #2' }
+  { name: 'Tulsa', lat: 36.1540, lon: -95.9928, label: 'Plumber · Tulsa · #1' },
+  { name: 'Boise', lat: 43.6150, lon: -116.2023, label: 'Dentist · Boise · #1' },
+  { name: 'Greenville', lat: 34.8526, lon: -82.3940, label: 'Roofer · Greenville · #2' },
+  { name: 'Spokane', lat: 47.6588, lon: -117.4260, label: 'HVAC · Spokane · #1' },
+  { name: 'Tampa', lat: 27.9506, lon: -82.4572, label: 'Real Estate · Tampa · #1' },
+  { name: 'Richmond', lat: 37.5407, lon: -77.4360, label: 'Lawyer · Richmond · #3 → #1' }
 ];
 
 export default function Globe() {

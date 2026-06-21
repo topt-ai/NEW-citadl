@@ -13,16 +13,17 @@ export default function CTA() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current,
-        { y: 30, opacity: 0 },
+        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
+        { y: 24, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.7,
+          ease: 'power2.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -39,10 +40,10 @@ export default function CTA() {
   return (
     <section id="contact" ref={sectionRef} className="py-[120px] lg:py-[200px] bg-citadl-bg flex items-center justify-center text-center border-b border-citadl-border">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-        <h2 className="font-display text-[64px] md:text-[96px] leading-[0.9] text-citadl-text-primary mb-8">
+        <h2 data-reveal className="font-display text-[64px] md:text-[96px] leading-[0.9] text-citadl-text-primary mb-8">
           Ready to get more customers?
         </h2>
-        <p className="font-body text-[18px] md:text-[20px] text-citadl-text-muted leading-relaxed max-w-2xl mb-12">
+        <p data-reveal className="font-body text-[18px] md:text-[20px] text-citadl-text-muted leading-relaxed max-w-2xl mb-12">
           Book a free 15-minute call. We will look at your current online presence and tell you exactly what is holding you back. No pitch. Just straight talk.
         </p>
 

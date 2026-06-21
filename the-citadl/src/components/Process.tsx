@@ -35,16 +35,17 @@ export default function Process() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current,
-        { y: 30, opacity: 0 },
+        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
+        { y: 24, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.7,
+          ease: 'power2.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -56,7 +57,7 @@ export default function Process() {
   return (
     <section id="process" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-16" data-reveal>
           <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
             PROCESS
           </p>
@@ -73,7 +74,7 @@ export default function Process() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative z-20">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-row md:flex-col items-start gap-6 md:gap-8">
+              <div key={index} data-reveal className="flex flex-row md:flex-col items-start gap-6 md:gap-8">
                 {/* Number Circle */}
                 <div className="w-[50px] h-[50px] rounded-full bg-citadl-alt border border-citadl-border flex items-center justify-center flex-shrink-0 shadow-sm">
                   <span className="font-mono text-[14px] text-citadl-text-primary font-medium">
@@ -93,19 +94,6 @@ export default function Process() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Small Inline FAQ Block */}
-        <div className="mt-24 max-w-3xl border-l-2 border-citadl-accent pl-6 py-2">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-accent mb-2">
-            Timeline Expectations
-          </p>
-          <h4 className="font-display text-[22px] text-citadl-text-primary mb-2">
-            "How long until I rank?"
-          </h4>
-          <p className="font-body text-[16px] text-citadl-text-muted leading-relaxed">
-            Most clients see movement in the first few weeks. Real local dominance is a months-long process, not overnight, and we stay on it until you're where you need to be.
-          </p>
         </div>
       </div>
     </section>
