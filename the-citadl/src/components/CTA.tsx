@@ -2,52 +2,33 @@
 
 import { useEffect, useRef } from 'react';
 import Cal, { getCalApi } from "@calcom/embed-react";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from './useReveal';
 
 export default function CTA() {
   const sectionRef = useRef<HTMLElement>(null);
+  useReveal(sectionRef);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 85%',
-          },
-        }
-      );
-    });
-
     (async function () {
       const cal = await getCalApi({ "namespace": "discovery-call" });
       cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
     })();
-
-    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-[120px] lg:py-[200px] bg-citadl-bg flex items-center justify-center text-center border-b border-citadl-border">
+    <section id="contact" ref={sectionRef} className="py-[120px] lg:py-[200px] bg-citadl-dark flex items-center justify-center text-center">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-        <h2 data-reveal className="font-display text-[64px] md:text-[96px] leading-[0.9] text-citadl-text-primary mb-8">
-          Ready to get more customers?
+        <p data-reveal className="font-body text-[11px] uppercase tracking-[0.28em] text-citadl-light/60 mb-8">
+          Request a Consultation
+        </p>
+        <h2 data-reveal className="font-display font-light text-[52px] md:text-[88px] leading-[0.98] text-citadl-light mb-8">
+          Let's build something <span className="italic font-normal">unforgettable.</span>
         </h2>
-        <p data-reveal className="font-body text-[18px] md:text-[20px] text-citadl-text-muted leading-relaxed max-w-2xl mb-12">
+        <p data-reveal className="font-body font-light text-[18px] md:text-[20px] text-citadl-light/70 leading-relaxed max-w-2xl mb-12">
           Book a free 15-minute call. We will look at your current online presence and tell you exactly what is holding you back. No pitch. Just straight talk.
         </p>
 
-        <div className="w-full max-w-[1000px] h-[600px] bg-white rounded-lg shadow-xl overflow-hidden mb-8 border border-citadl-border">
+        <div data-reveal className="w-full max-w-[1000px] h-[600px] bg-white rounded-[2px] shadow-2xl overflow-hidden mb-8">
           <Cal
             namespace="discovery-call"
             calLink="the-citadl/discovery-call"
@@ -56,7 +37,7 @@ export default function CTA() {
           />
         </div>
 
-        <p className="font-mono text-[11px] text-citadl-accent uppercase tracking-wider">
+        <p className="font-body text-[11px] text-citadl-light/50 uppercase tracking-[0.2em]">
           Shall we begin?
         </p>
       </div>

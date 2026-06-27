@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import { useReveal } from './useReveal';
 
 const steps = [
   {
@@ -20,7 +17,7 @@ const steps = [
   {
     number: '03',
     title: 'Build',
-    description: 'Launch site in 2-4 weeks. Maps ranking work starts immediately and compounds over time.',
+    description: 'Bespoke build with your MLS synced in. Ranking work starts immediately and compounds over time.',
   },
   {
     number: '04',
@@ -31,37 +28,16 @@ const steps = [
 
 export default function Process() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 85%',
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useReveal(sectionRef);
 
   return (
     <section id="process" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-16" data-reveal>
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
-            PROCESS
+          <p className="font-body text-[11px] uppercase tracking-[0.28em] text-citadl-accent mb-6">
+            Process
           </p>
-          <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-text-primary max-w-2xl">
+          <h2 className="font-display font-light text-[40px] md:text-[58px] leading-[1.05] text-citadl-text-primary max-w-2xl">
             No mystery. No fluff. Here is how it works.
           </h2>
         </div>

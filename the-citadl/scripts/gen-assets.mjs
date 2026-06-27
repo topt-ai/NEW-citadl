@@ -11,8 +11,8 @@ const ogSvg = readFileSync(join(__dirname, 'og-image.svg'));
 
 // apple-touch-icon: extra padding so the C doesn't touch edges on iOS
 const appleSvg = Buffer.from(`<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="40" fill="#0C0F0D"/>
-  <path d="M120 56 A34 34 0 1 0 120 124" fill="none" stroke="#C8F04B" stroke-width="15" stroke-linecap="round"/>
+  <rect width="180" height="180" rx="40" fill="#1B2A4A"/>
+  <path d="M120 56 A34 34 0 1 0 120 124" fill="none" stroke="#F5F3EE" stroke-width="15" stroke-linecap="round"/>
 </svg>`);
 
 async function pngFrom(svg, size) {

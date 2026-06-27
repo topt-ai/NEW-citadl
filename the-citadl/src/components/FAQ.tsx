@@ -1,36 +1,33 @@
 "use client";
 
-import { useEffect, useRef, useState, useId } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useState, useId } from 'react';
 import { Plus } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from './useReveal';
 
 const faqs = [
   {
+    q: 'How does the MLS sync work?',
+    a: 'We connect to your local MLS feed. New listings, price changes, and status updates appear on your site automatically, usually within the hour. You can still add off-market or exclusive listings manually anytime.',
+  },
+  {
     q: 'How long until I rank on Google Maps?',
     a: "Most clients see movement in the first few weeks. Real local dominance is a weeks-long process, not overnight, and we stay on it until you're where you need to be and we keep you there.",
+  },
+  {
+    q: 'What exactly is included in "automation"?',
+    a: 'It depends on your business. Common examples: new listings auto-posting to your social media, lead notifications sent straight to your phone, automated follow-up messages to inquiries. We figure out what is worth building for you specifically on the discovery call.',
+  },
+  {
+    q: 'I already have a website, can you still help?',
+    a: "Yes. We'll review what you have first. If the foundation is solid, we focus on getting you ranking. If it needs a rebuild, we'll tell you honestly.",
   },
   {
     q: 'Do you require long contracts?',
     a: "No. Month to month, always. If it's not working, you're not locked in.",
   },
   {
-    q: 'What if I already have a website?',
-    a: "We review what you have first. If it's solid, we improve what's not working. If it needs a rebuild, we tell you why and what that would look like. Either way, no guessing.",
-  },
-  {
-    q: 'Who actually does the work?',
-    a: 'You talk directly to the person building your site or running your campaigns. No account managers, no middlemen.',
-  },
-  {
-    q: "What's included in the SEO work?",
-    a: 'Google Business Profile optimization, local search ranking work, review management guidance, and ongoing backend optimization.',
-  },
-  {
-    q: 'How fast can you launch a new website?',
-    a: 'Most sites launch in 1 to 4 weeks depending on scope.',
+    q: 'Do you only work with luxury agents?',
+    a: 'We specialize in real estate, full stop. Whether you are just starting out or running a boutique brokerage, the approach is the same: bespoke, never templated.',
   },
 ];
 
@@ -38,37 +35,16 @@ export default function FAQ() {
   const sectionRef = useRef<HTMLElement>(null);
   const [open, setOpen] = useState<number | null>(0);
   const baseId = useId();
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 85%',
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useReveal(sectionRef);
 
   return (
     <section id="faq" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-3xl mx-auto px-6 lg:px-12">
         <div className="mb-16" data-reveal>
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-accent mb-6">
+          <p className="font-body text-[11px] uppercase tracking-[0.28em] text-citadl-accent mb-6">
             FAQ
           </p>
-          <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-text-primary">
+          <h2 className="font-display font-light text-[40px] md:text-[58px] leading-[1.05] text-citadl-text-primary">
             Questions, answered.
           </h2>
         </div>

@@ -1,131 +1,69 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { useReveal } from './useReveal';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const projects = [
-  {
-    id: 4,
-    name: 'VOID',
-    industry: 'Performance Agency',
-    description: 'Aesthetically clean performance agency',
-    image: '/void2.png',
-  },
-  {
-    id: 3,
-    name: 'ArcticEdge HVAC',
-    industry: 'HVAC Services',
-    description: 'Clean service-focused layout optimized for local conversions.',
-    image: '/arcticedge.png',
-  },
-  {
-    id: 1,
-    name: 'Apex Roofing Co.',
-    industry: 'Roofing Contractor',
-    description: 'Premium dark minimal site with GSAP scroll animations.',
-    image: '/apex-roofing.png',
-  },
-  {
-    id: 2,
-    name: 'Sentinel Pest Co.',
-    industry: 'Pest Control',
-    description: 'Trust-forward design with magnetic cursor and micro-interactions.',
-    image: '/sentinel.png',
-  },
-];
-
-interface ProjectCardProps {
-  project: typeof projects[number];
-}
-
-function ProjectCard({ project }: ProjectCardProps) {
-  return (
-    <div className="group" data-reveal>
-      {/* Browser window frame */}
-      <div className="rounded-[2px] overflow-hidden bg-citadl-alt border border-citadl-border transition-colors duration-300 group-hover:border-citadl-text-muted/40">
-        {/* Chrome top bar */}
-        <div className="h-8 flex items-center gap-2 px-4 bg-citadl-dark border-b border-citadl-border">
-          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#8B4444' }} />
-          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#8B8344' }} />
-          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: '#4B7355' }} />
-        </div>
-
-        {/* Screenshot, strict 16:9 */}
-        <div className="aspect-video w-full overflow-hidden bg-citadl-dark">
-          <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      {/* Caption below the window */}
-      <div className="pt-5">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-lime mb-2">
-          {project.industry}
-        </p>
-        <h3 className="font-display text-[28px] leading-tight text-citadl-text-primary mb-2">
-          {project.name}
-        </h3>
-        <p className="font-body text-[15px] text-citadl-text-muted leading-relaxed max-w-sm">
-          {project.description}
-        </p>
-      </div>
-    </div>
-  );
-}
+const featured = {
+  name: 'Marcus Reid Real Estate',
+  eyebrow: 'Concept Build',
+  subtitle: 'Real estate website with automatic MLS sync, built as a showcase of what is possible.',
+  link: 'https://realtor-website-en.vercel.app/',
+  image: '/marcus-reid.webp',
+};
 
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 85%',
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useReveal(sectionRef);
 
   return (
-    <section id="work" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="mb-16" data-reveal>
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
-            SELECTED WORK
+    <section id="work" ref={sectionRef} className="py-[120px] lg:py-[180px] bg-citadl-bg border-b border-citadl-border">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="mb-16 max-w-3xl" data-reveal>
+          <p className="font-body text-[11px] uppercase tracking-[0.28em] text-citadl-accent mb-6">
+            Selected Work
           </p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-[48px] md:text-[64px] leading-[1.1] text-citadl-text-primary mb-6">
-              The work.
-            </h2>
-            <p className="font-body text-[18px] text-citadl-text-muted leading-relaxed">
-              A few sites we have built for service businesses.
-            </p>
-          </div>
+          <h2 className="font-display font-light text-[44px] md:text-[64px] leading-[1.05] text-citadl-text-primary">
+            The work.
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <a
+          href={featured.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block"
+          data-reveal
+        >
+          {/* Full-bleed editorial image */}
+          <div className="relative aspect-[16/10] md:aspect-[16/9] w-full overflow-hidden rounded-[2px] bg-citadl-dark">
+            <img
+              src={featured.image}
+              alt={featured.name}
+              className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+            <span className="absolute top-6 left-6 font-body text-[11px] uppercase tracking-[0.22em] text-citadl-light/90 border border-citadl-light/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+              {featured.eyebrow}
+            </span>
+          </div>
+
+          {/* Caption */}
+          <div className="mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <h3 className="font-display font-normal text-[34px] md:text-[44px] leading-[1.05] text-citadl-text-primary mb-3">
+                {featured.name}
+              </h3>
+              <p className="font-body font-light text-[17px] md:text-[18px] text-citadl-text-muted leading-relaxed">
+                {featured.subtitle}
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 font-body text-[15px] font-medium text-citadl-accent whitespace-nowrap">
+              View the site
+              <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </span>
+          </div>
+        </a>
       </div>
     </section>
   );

@@ -1,27 +1,22 @@
-import { Space_Grotesk, DM_Sans, JetBrains_Mono } from 'next/font/google';
+import { Fraunces, Inter } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['700'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  weight: ['400', '500', '700'],
-});
-
-const siteTitle = 'The Citadl: Web Design & Local SEO for Service Businesses';
-const siteDescription = 'We build high-performance, conversion-focused websites and drive local SEO for HVAC, roofing, plumbing, and other US service businesses. No long contracts.';
+const siteTitle = 'The Citadl: Bespoke Real Estate Websites';
+const siteDescription = 'A boutique studio building custom real estate websites with MLS-synced listings, agent portals, and automation. One of one, never a template.';
 
 export const metadata = {
   title: siteTitle,
@@ -49,7 +44,7 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'The Citadl, web design and local SEO for service businesses.',
+        alt: 'The Citadl, bespoke real estate websites.',
       },
     ],
     locale: 'en_US',
@@ -71,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${fraunces.variable} ${inter.variable} scroll-smooth`}
     >
       <head>
         <script
@@ -84,20 +79,19 @@ export default function RootLayout({
               'url': 'https://thecitadl.com',
               'logo': 'https://thecitadl.com/favicon-32x32.png',
               'image': 'https://thecitadl.com/og-image.png',
-              'description': 'Web design and local SEO agency targeting US service businesses.',
+              'description': 'A boutique studio building bespoke real estate websites with MLS-synced listings, agent portals, and automation.',
               'email': 'hello@thecitadl.com',
-              'priceRange': '$$',
+              'priceRange': '$$$',
+              'areaServed': 'US',
               'address': {
                 '@type': 'PostalAddress',
-                'addressLocality': 'Austin',
-                'addressRegion': 'TX',
                 'addressCountry': 'US'
               }
             }),
           }}
         />
       </head>
-      <body className="min-h-screen bg-citadl-bg text-citadl-text-primary selection:bg-citadl-lime selection:text-citadl-dark">
+      <body className="min-h-screen bg-citadl-bg text-citadl-text-primary selection:bg-citadl-accent selection:text-citadl-light">
         {/* Global Grain Overlay */}
         <svg className="grain-overlay" aria-hidden="true">
           <filter id="noise">

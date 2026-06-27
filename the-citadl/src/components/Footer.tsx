@@ -7,13 +7,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
           {/* Left */}
           <div className="flex flex-col">
-            <span className="font-mono text-[16px] tracking-[0.15em] uppercase font-medium mb-6">
+            <span className="font-body text-[15px] tracking-[0.22em] uppercase font-medium mb-6">
               The Citadl
             </span>
             <p className="font-body text-[16px] text-citadl-text-muted leading-relaxed max-w-xs mb-6">
-              We build the online foundation your business actually needs.
+              Bespoke websites for real estate. One of one, never a template.
             </p>
-            <a href="mailto:hello@thecitadl.com" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-lime transition-colors">
+            <a href="mailto:hello@thecitadl.com" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-accent transition-colors">
               hello@thecitadl.com
             </a>
           </div>
@@ -21,16 +21,16 @@ export default function Footer() {
           {/* Center */}
           <div className="flex flex-col md:items-center">
             <div className="flex flex-col space-y-4">
-              <a href="#services" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-lime transition-colors">
-                Services
+              <a href="#services" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-accent transition-colors">
+                Capabilities
               </a>
-              <a href="#work" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-lime transition-colors">
+              <a href="#work" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-accent transition-colors">
                 Work
               </a>
-              <a href="#process" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-lime transition-colors">
+              <a href="#process" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-accent transition-colors">
                 Process
               </a>
-              <a href="#contact" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-lime transition-colors">
+              <a href="#contact" className="font-body text-[15px] text-citadl-text-muted hover:text-citadl-accent transition-colors">
                 Contact
               </a>
             </div>
@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Right */}
           <div className="flex flex-col md:items-end">
-            <p className="font-mono text-[13px] uppercase tracking-wider text-citadl-text-muted mb-2">
+            <p className="font-body text-[12px] uppercase tracking-[0.22em] text-citadl-text-muted mb-2">
               Locations
             </p>
             <div className="font-body text-[15px] text-citadl-text-muted md:text-right space-y-1">
@@ -49,10 +49,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-citadl-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-text-muted">
+          <p className="font-body text-[11px] uppercase tracking-[0.18em] text-citadl-text-muted">
             &copy; {new Date().getFullYear()} The Citadl. All rights reserved.
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-citadl-text-muted">
+          <p className="font-body text-[11px] uppercase tracking-[0.18em] text-citadl-text-muted">
             Built by The Citadl. Obviously.
           </p>
         </div>

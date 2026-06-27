@@ -1,69 +1,45 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import { useReveal } from './useReveal';
 
 const benefits = [
   {
-    title: 'Top Rankings.',
-    description: 'Google Maps visibility that actually moves the needle for local searches.',
+    title: 'Always Current.',
+    description: 'Your listings sync automatically. Your site never goes stale.',
   },
   {
-    title: 'Month to Month.',
-    description: 'No lock-in contracts, ever.',
+    title: 'Built Around You.',
+    description: 'No templates, no tiers that look cheap. Every site is custom.',
   },
   {
     title: 'Direct Access.',
     description: 'You talk to the builder, not an account manager.',
   },
   {
-    title: 'Real Metrics.',
-    description: 'Leads, calls, revenue. Not likes.',
+    title: 'No Lock-In.',
+    description: "Month to month, always. If it's not working, you're not stuck.",
   },
 ];
 
 export default function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll('[data-reveal]') ?? [],
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 85%',
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useReveal(sectionRef);
 
   return (
     <section id="why-us" ref={sectionRef} className="py-[120px] lg:py-[160px] bg-citadl-bg border-b border-citadl-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-16" data-reveal>
-          <p className="font-mono text-[11px] uppercase tracking-widest text-citadl-text-muted mb-6">
-            WHY US
+          <p className="font-body text-[11px] uppercase tracking-[0.28em] text-citadl-accent mb-6">
+            Why Us
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left Side */}
           <div className="flex flex-col justify-between" data-reveal>
-            <h2 className="font-display text-[56px] md:text-[72px] leading-[1.1] text-citadl-text-primary mb-8">
-              "We win only<br />if you win."
+            <h2 className="font-display font-light italic text-[48px] md:text-[68px] leading-[1.08] text-citadl-text-primary mb-8">
+              “We win only<br />if you win.”
             </h2>
             <p className="font-body text-[18px] text-citadl-text-muted leading-relaxed max-w-md">
               That means no long contracts, no runaround, and no vanity reports full of numbers that don't pay your bills.

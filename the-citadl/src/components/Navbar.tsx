@@ -15,11 +15,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Light text over the photographic hero; ink text once scrolled onto bone.
+  const linkColor = scrolled ? 'text-citadl-text-primary' : 'text-citadl-light';
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled
-            ? 'bg-citadl-bg/85 backdrop-blur-md border-b border-citadl-border'
+            ? 'bg-citadl-bg/90 backdrop-blur-md border-b border-citadl-border'
             : 'bg-transparent border-b border-transparent'
           }`}
       >
@@ -27,7 +30,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <a
               href="#"
-              className="font-mono text-[13px] tracking-[0.15em] uppercase text-citadl-text-primary font-medium"
+              className={`font-body text-[13px] tracking-[0.22em] uppercase font-medium transition-colors ${linkColor}`}
             >
               The Citadl
             </a>
@@ -35,29 +38,33 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-[14px] text-citadl-text-primary hover:text-citadl-accent transition-colors">
-              Services
+            <a href="#services" className={`text-[14px] hover:opacity-70 transition-opacity ${linkColor}`}>
+              Capabilities
             </a>
-            <a href="#work" className="text-[14px] text-citadl-text-primary hover:text-citadl-accent transition-colors">
+            <a href="#work" className={`text-[14px] hover:opacity-70 transition-opacity ${linkColor}`}>
               Work
             </a>
-            <a href="#process" className="text-[14px] text-citadl-text-primary hover:text-citadl-accent transition-colors">
+            <a href="#process" className={`text-[14px] hover:opacity-70 transition-opacity ${linkColor}`}>
               Process
             </a>
             <a
               href="https://cal.com/the-citadl/discovery-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-citadl-accent text-citadl-dark text-[14px] font-semibold px-5 py-2.5 rounded-[2px] hover:bg-citadl-accent-hover transition-colors"
+              className={`text-[14px] font-medium px-5 py-2.5 rounded-[2px] transition-colors ${scrolled
+                  ? 'bg-citadl-accent text-citadl-light hover:bg-citadl-accent-hover'
+                  : 'bg-citadl-light text-citadl-text-primary hover:bg-white'
+                }`}
             >
-              Book a Call
+              Request a Consultation
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-citadl-text-primary"
+            className={`md:hidden transition-colors ${linkColor}`}
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
           >
             <Menu size={24} />
           </button>
@@ -67,34 +74,34 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         aria-hidden={!mobileMenuOpen}
-        className={`fixed inset-0 z-50 bg-citadl-alt text-citadl-text-primary transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+        className={`fixed inset-0 z-50 bg-citadl-dark text-citadl-light transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
           }`}
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center h-14">
-            <span className="font-mono text-[13px] tracking-[0.15em] uppercase">The Citadl</span>
-            <button onClick={() => setMobileMenuOpen(false)} className="text-citadl-text-primary">
+            <span className="font-body text-[13px] tracking-[0.22em] uppercase">The Citadl</span>
+            <button onClick={() => setMobileMenuOpen(false)} className="text-citadl-light" aria-label="Close menu">
               <X size={24} />
             </button>
           </div>
           <div className="flex flex-col space-y-8 mt-24 text-center">
             <a
               href="#services"
-              className="font-display text-4xl text-citadl-text-primary hover:text-citadl-accent transition-colors"
+              className="font-display text-4xl text-citadl-light hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              Capabilities
             </a>
             <a
               href="#work"
-              className="font-display text-4xl text-citadl-text-primary hover:text-citadl-accent transition-colors"
+              className="font-display text-4xl text-citadl-light hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
               Work
             </a>
             <a
               href="#process"
-              className="font-display text-4xl text-citadl-text-primary hover:text-citadl-accent transition-colors"
+              className="font-display text-4xl text-citadl-light hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
               Process
@@ -103,10 +110,10 @@ export default function Navbar() {
               href="https://cal.com/the-citadl/discovery-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-citadl-lime text-citadl-dark font-medium text-lg px-6 py-4 rounded-[2px] mt-8 inline-block mx-auto hover:bg-citadl-accent-hover transition-colors"
+              className="bg-citadl-light text-citadl-text-primary font-medium text-lg px-6 py-4 rounded-[2px] mt-8 inline-block mx-auto hover:bg-white transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book a Call
+              Request a Consultation
             </a>
           </div>
         </div>

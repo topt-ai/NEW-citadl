@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import Comparison from '../components/Comparison';
 import Portfolio from '../components/Portfolio';
 import WhyUs from '../components/WhyUs';
 import Process from '../components/Process';
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <Comparison />
         <Portfolio />
         <WhyUs />
         <Process />
