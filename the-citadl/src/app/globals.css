@@ -66,31 +66,6 @@ body {
   }
 }
 
-/* About: image pans behind the static text as the section scrolls past the
-   viewport, mimicking background-attachment: fixed without the iOS bug.
-   Uses native CSS scroll-driven animation (no JS/rAF). Where unsupported, the
-   image simply sits still as a clean static fallback. */
-@keyframes aboutPan {
-  from { transform: translateY(0); }
-  to { transform: translateY(-22%); }
-}
-
-@supports (animation-timeline: view()) {
-  .about-pan {
-    animation: aboutPan linear both;
-    animation-timeline: view();
-    animation-range: cover 0% cover 100%;
-    will-change: transform;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-pan {
-    animation: none;
-    transform: none;
-  }
-}
-
 /* Scroll reveal (IntersectionObserver + CSS transition) */
 [data-reveal] {
   transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
