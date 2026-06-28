@@ -91,7 +91,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-citadl-bg text-citadl-text-primary selection:bg-citadl-accent selection:text-citadl-light">
+      <body className="min-h-screen text-citadl-text-primary selection:bg-citadl-accent selection:text-citadl-light">
         {/* Global Grain Overlay */}
         <svg className="grain-overlay" aria-hidden="true">
           <filter id="noise">

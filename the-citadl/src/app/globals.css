@@ -27,7 +27,9 @@
 }
 
 body {
-  background-color: var(--color-citadl-bg);
+  /* No background here: the bone base comes from the html canvas and each
+     section's own background, so the About section's fixed image can show
+     through its transparent window (see About.tsx). */
   color: var(--color-citadl-text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
